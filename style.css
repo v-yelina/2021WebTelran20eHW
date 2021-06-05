@@ -66,6 +66,10 @@ aside a {
   border: 5px groove #8d3b72;
 }
 
+footer {
+  clear: both;
+}
+
 @media screen and (max-width: 768px) {
   .main-article {
     width: 100%;
@@ -96,5 +100,6 @@ aside a {
   .main-article {
     width: 100%;
     border: none;
+    background-color: white;
   }
 }
