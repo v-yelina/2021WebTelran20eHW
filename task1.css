@@ -1,0 +1,16 @@
+dt {
+  position: relative;
+  top: 25px;
+  display: inline-block;
+  padding: 5px;
+  background-color: black;
+  color: white;
+}
+
+dd {
+  display: block;
+  padding: 10px;
+  padding-left: 80px;
+  margin-left: 15px;
+  border: 1px solid black;
+}
