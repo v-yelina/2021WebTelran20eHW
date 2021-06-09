@@ -124,11 +124,12 @@ body {
     height: 120px;
   }
 
-  .container7-8,
-  .container9-12,
-  .container13-15 {
+  div.container7-8,
+  div.container9-12,
+  div.container13-15 {
     width: 100%;
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     gap: 20px;
   }
