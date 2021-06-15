@@ -1,3 +1,5 @@
+"use strict";
+
 let pill = 'red';
 
 switch (pill) {
