@@ -1,3 +1,5 @@
+"use strict";
+
 let age = 17;
 
 switch (age) {
