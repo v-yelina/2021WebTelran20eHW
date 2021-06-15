@@ -1,3 +1,5 @@
+"use strict";
+
 let month = 10;
 
 switch (month) {
