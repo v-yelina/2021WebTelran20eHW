@@ -1,3 +1,5 @@
+"use strict";
+
 function countDepositIncrease(amount, percent, years) {
     
     return amount + amount * percent / 100 * years;
