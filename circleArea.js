@@ -1,3 +1,5 @@
+"use strict";
+
 function findCircleArea(radius) {
     const p = 3.14;
     return p * (radius ** 2);
