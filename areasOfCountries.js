@@ -1,3 +1,5 @@
+"use strict";
+
 function countAreasCorrelation(firstArea, secondArea) {
     return firstArea / secondArea;
 }
