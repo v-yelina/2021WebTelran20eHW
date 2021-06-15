@@ -1,3 +1,5 @@
+"use strict";
+
 function countEuroAmount(cash, exchangeRate) {
     return cash * 1.1;
 }
