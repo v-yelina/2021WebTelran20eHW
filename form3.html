@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form 3</title>
+    <style>
+        input,
+        textarea {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Запись на курсы программирования</h1>
+    <hr>
+    <label for="firstName">Имя:</label><br>
+    <input type="text" name="firstName" id="firstName" placeholder="Андрей"><br>
+    <input type="radio" name="languages" id="java" value="java">
+    <label for="java">Java</label>
+    <input type="radio" name="languages" id="c" value="c">
+    <label for="c">C++</label>
+    <input type="radio" name="languages" id="python" value="python">
+    <label for="python">Python</label>
+    <input type="radio" name="languages" id="php" value="php">
+    <label for="php">PHP</label>
+    <input type="radio" name="languages" id="javaScript" value="javaScript">
+    <label for="javaScript">JavaScript</label><br>
+    <label for="information">Дополнительная информация</label><br>
+    <textarea name="information" id="information" cols="30" rows="4">Есть опыт программирования на Java</textarea><br>
+    <label for="password">Секретное слово</label><br>
+    <input type="password" name="password" id="password" value="*********"><br>
+    <input type="checkbox" name="checkRules" id="checkRules">
+    <label for="checkRules">С правилами ознакомился и согласен</label><br>
+    <input type="submit" value="Отправить">
+    <input type="reset" value="Очистить">
+    <hr>
+    <P>Made by andron13</P>
+</body>
+</html>
