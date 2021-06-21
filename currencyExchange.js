@@ -58,55 +58,7 @@ function currencyExchangeRate(currency1, currency2) {
 }
 
 function currencyExchange(currency1, currency2, amount) {
-    finalAmount = 0;
-    if (currency1 === currency2) {
-        finalAmount = amount;
-    } else {
-        if (currency1 === 'eur') {
-            if (currency2 === 'usd') {
-                finalAmount = amount * currencyExchangeRate('eur', 'usd');
-            } else if (currency2 === 'byn') {
-                finalAmount = amount * currencyExchangeRate('eur', 'byn');
-            } else if (currency2 === 'gpb') {
-                finalAmount = amount * currencyExchangeRate('eur', 'gpb');
-            } else {
-                finalAmount = 'There is no rate for this currency'
-            } 
-        } else if (currency1 === 'usd') {
-            if (currency2 === 'eur') {
-                finalAmount = amount * currencyExchangeRate('usd', 'eur');
-            } else if (currency2 === 'byn') {
-                finalAmount = amount * currencyExchangeRate('usd', 'byn');
-            } else if (currency2 === 'gpb') {
-                finalAmount = amount * currencyExchangeRate('usd', 'gpb');
-            } else {
-                finalAmount = 'There is no rate for this currency'
-            }
-        } else if (currency1 === 'byn') {
-            if (currency2 === 'eur') {
-                finalAmount = amount * currencyExchangeRate('byn', 'eur');
-            } else if (currency2 === 'usd') {
-                finalAmount = amount * currencyExchangeRate('byn', 'usd');
-            } else if (currency2 === 'gpb') {
-                finalAmount = amount * currencyExchangeRate('byn', 'gpb');
-            } else {
-                finalAmount = 'There is no rate for this currency'
-            }
-        } else if (currency1 === 'gpb') {
-            if (currency2 === 'eur') {
-                finalAmount = amount * currencyExchangeRate('gpb', 'eur');
-            } else if (currency2 === 'byn') {
-                finalAmount = amount * currencyExchangeRate('gpb', 'byn');
-            } else if (currency2 === 'usd') {
-                finalAmount = amount * currencyExchangeRate('gpb', 'usd');
-            } else {
-                finalAmount = 'There is no rate for this currency'
-            }
-        } else {
-            finalAmount = 'There is no rate for this currency'
-        }
-    }
-    return finalAmount;
+    return amount * currencyExchangeRate(currency1, currency2);
 }
 
 
