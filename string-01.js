@@ -1,4 +1,4 @@
-'use strict;'
+'use strict';
 
 /* 04 makeOutWord
 Given an "out" string length 4, such as "<<>>", and a word, return a new string where the word is in the middle of the out string, e.g. "<>". Note: use str.substring(i, j) to extract the String starting at index i and going up to but not including index j.
