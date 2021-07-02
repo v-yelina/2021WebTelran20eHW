@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  padding: 20px;
+}
+
+form {
+  width: 50%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+hr {
+  margin: 50px;
+}
+
+.login1 {
+  justify-content: space-between;
+}
+
+.login1 h3 {
+  width: 100%;
+  text-transform: uppercase;
+  color: #413864;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.login1 input[type="text"] {
+  width: 100%;
+  padding: 10px 20px;
+  background-color: #e6e6e6;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.login1 ::placeholder {
+  color: #8f8fa1;
+  opacity: 1;
+}
+.login1 label {
+  color: #9a9ba4;
+  margin-bottom: 25px;
+}
+
+.login1 a {
+  text-decoration: none;
+  color: #b19dfa;
+}
+
+.login1 input[type="submit"] {
+  width: 100%;
+  color: white;
+  text-transform: uppercase;
+  background-color: #8581f9;
+  border-radius: 5px;
+  border: none;
+  padding: 10px;
+}
+
+.login2 {
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.login2 h3 {
+  width: 100%;
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.login2 button {
+  width: 45%;
+  padding: 10px 10px 10px 40px;
+  border: none;
+  border-radius: 5px;
+  background-repeat: no-repeat;
+  background-position: 30px;
+  margin-bottom: 20px;
+}
+
+.login2 .fb {
+  background-color: #3f5b95;
+  color: white;
+  background-image: url("/img/facebook.png");
+}
+
+.login2 .google {
+  background-color: white;
+  background-image: url("/img/search.png");
+  background-size: 16px;
+  box-shadow: 1px 1px 3px #8e8e8e;
+  font-family: "Noto Sans", sans-serif;
+}
+
+.login2 label {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.login2 label input {
+  background-color: #f7f7f7;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  margin-top: 3px;
+}
+
+.login2 label a {
+  margin-left: 5px;
+  color: #e6dfcf;
+}
+
+.login2 input[type="submit"] {
+  width: 100%;
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 20px 0 40px 0;
+}
+
+.login2 p {
+  width: 100%;
+  color: #e6dfcf;
+  text-align: center;
+}
+.login2 p a {
+  color: #e6dfcf;
+}

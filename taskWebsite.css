@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap");
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+header {
+  background-color: #5e35ac;
+  display: flex;
+  color: white;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.header-logo {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  margin: auto 0 auto 1rem;
+}
+
+.header-navigation ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.header-navigation li {
+  width: 70px;
+  background-color: #75d45d;
+  list-style-type: none;
+  border-radius: 5px;
+  border: #75d45d 1px solid;
+  font-size: 0;
+  padding: 10px;
+}
+
+section {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+h2 {
+  width: 100%;
+  text-align: center;
+}
+
+.news-article {
+  padding: 10px;
+  color: white;
+  background-color: #17b5a5;
+  width: 25%;
+  border-radius: 5px;
+  border: none;
+}
+
+.abroad-card {
+  width: 37.5%;
+  background-color: #17b5a5;
+  padding: 20px;
+  border-radius: 5px;
+  color: white;
+}
+
+.abroad-image {
+  width: 100%;
+}
+
+.facts-item {
+  display: flex;
+  width: 40%;
+  gap: 10px;
+  text-align: justify;
+}
+
+.facts img {
+  width: 100px;
+}
+
+.marathon-item {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  margin-bottom: 10px;
+}
+
+.marathon-item span:first-child {
+  background-color: #9cd4d4;
+  padding: 10px;
+  text-align: center;
+}
+
+.marathon-item span:nth-child(2) {
+  background-color: #dbcfcf;
+  padding: 10px;
+  text-align: center;
+}
+
+.marathon-item .marathon-description {
+  background-color: #75d45d;
+  margin: 0;
+  padding: 10px;
+  text-align: justify;
+}
+
+.marathon-item button {
+  background-color: #17b5a5;
+  padding: 10px;
+  text-align: center;
+}
+
+footer {
+  background-color: #5e35ac;
+  padding: 15px;
+  text-align: center;
+}

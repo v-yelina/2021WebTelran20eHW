@@ -1,0 +1,146 @@
+@import url("resetcss.css");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.header {
+  display: grid;
+  grid-template-columns: 12rem 1fr 12rem;
+  background-color: black;
+  color: white;
+  font-size: 5rem;
+  padding: 2rem 0;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  font-style: italic;
+  font-weight: 500;
+  text-align: center;
+}
+
+h1 span {
+  display: block;
+}
+
+h1 {
+  font-size: 5rem;
+}
+
+h1 span.ru {
+  font-size: 4rem;
+}
+
+.menu ul {
+  display: flex;
+  color: white;
+  background-color: #333;
+  font-size: 3rem;
+  justify-content: space-evenly;
+}
+
+.menu li {
+  border-left: white 2px solid;
+  border-right: white 2px solid;
+  padding: 1rem 2rem;
+}
+
+h2 {
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+  background-color: black;
+  color: white;
+  margin: 10px 0;
+  font-size: 2.5rem;
+}
+
+section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+section .description {
+  width: 40%;
+  font-size: 2rem;
+  padding: 20px;
+  text-align: justify;
+}
+
+section figure {
+  width: 40%;
+}
+
+section figure img {
+  height: 100vh;
+  border-radius: 10px;
+  border: none;
+}
+
+section figcaption {
+  width: 45%;
+  font-size: 1rem;
+  margin-top: 5px;
+}
+
+.skills {
+  flex-direction: row-reverse;
+}
+
+.skills .description ul {
+  list-style: disc;
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+
+.skills figure img {
+  width: 80vh;
+  height: auto;
+}
+
+strong {
+  font-weight: 700;
+}
+
+footer {
+  background-color: black;
+  padding: 25px;
+  font-size: 1.5rem;
+  color: white;
+  margin-top: 10px;
+}
+
+@media screen and (max-width: 700px) {
+  section {
+    padding: 30px;
+    flex-direction: column;
+    align-items: center;
+  }
+  section .description {
+    width: 100%;
+  }
+
+  section figure {
+    width: 100%;
+    text-align: center;
+  }
+
+  section figure figcaption {
+    text-align: left;
+    margin-left: 20px;
+  }
+}
