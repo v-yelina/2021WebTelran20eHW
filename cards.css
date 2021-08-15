@@ -1,0 +1,101 @@
+:root {
+  --beginners-color: #555c66;
+  --advanced-color: #858e99;
+  --workshops-color: #478ac9;
+  --tours-color: #77aad9;
+}
+
+body {
+  background-image: url("img/bg-image.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.offers {
+  display: flex;
+  width: 80%;
+  margin: 45% auto 5%;
+}
+
+.offer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 30px 30px 45px 20px;
+  color: white;
+}
+
+.beginners {
+  background-color: var(--beginners-color);
+}
+
+.advanced {
+  background-color: var(--advanced-color);
+}
+
+.workshops {
+  background-color: var(--workshops-color);
+}
+
+.tours {
+  background-color: var(--tours-color);
+}
+
+.offer span {
+  font-size: 3.5rem;
+  font-weight: 700;
+}
+
+.offer-title {
+  display: block;
+  height: 60px;
+  font-size: 1.5rem;
+}
+
+.offer .next-btn {
+  position: relative;
+  border-radius: 50%;
+  border: none;
+  width: 60px;
+  height: 60px;
+  margin-top: 20px;
+}
+
+.offer .next-btn::after {
+  content: "";
+  position: absolute;
+  border: 3px solid black;
+  width: 20px;
+  height: 20px;
+  border-top: transparent;
+  border-left: transparent;
+  transform: rotate(-45deg);
+  top: 20px;
+  left: 13px;
+}
+
+.beginners .next-btn::after {
+  border-color: var(--beginners-color);
+}
+
+.advanced .next-btn::after {
+  border-color: var(--advanced-color);
+}
+
+.workshops .next-btn::after {
+  border-color: var(--workshops-color);
+}
+
+.tours .next-btn::after {
+  border-color: var(--tours-color);
+}
+
+@media screen and (max-width: 768px) {
+  .offers {
+    flex-wrap: wrap;
+  }
+
+  .offer {
+    width: 100%;
+  }
+}

@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.capacity {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background-color: #eef2fd;
+
+  color: #163e7f;
+  margin-top: 3%;
+  padding: 5% 15%;
+  grid-gap: 30px;
+}
+
+.section-title,
+p {
+  grid-column: 1 / 4;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 4rem;
+  font-weight: 400;
+  line-height: 4rem;
+  font-family: "Oswald", sans-serif;
+}
+
+.capacity > p {
+  font-size: 1.3rem;
+  color: #7e8fa6;
+}
+
+.capacity-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: #35393f;
+  background-color: white;
+  padding: 300px 30px 50px;
+  background-size: 100% 280px;
+  background-position: top center;
+  background-repeat: no-repeat;
+}
+
+.business {
+  background-image: url("img/man.png");
+}
+
+.team {
+  background-image: url("img/group.png");
+}
+
+.technology {
+  background-image: url("img/hands.png");
+}
+
+.capacity-item h3 {
+  font-family: "Oswald", sans-serif;
+  font-size: 1.9rem;
+  font-weight: 400;
+}
+
+.capacity-item p {
+  text-align: justify;
+  font-size: 1.2rem;
+  color: #6d7e96;
+}
+
+@media screen and (max-width: 768px) {
+  .capacity-item {
+    grid-column: 1 / 4;
+  }
+}
