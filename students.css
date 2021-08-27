@@ -1,0 +1,34 @@
+.bestStudents {
+  display: grid;
+  flex-wrap: wrap;
+  gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.bestStudents .sectionTitle {
+  grid-column: 1 / 5;
+  text-align: center;
+  color: goldenrod;
+  text-decoration: underline;
+  font-size: 3rem;
+}
+
+.card {
+  background-color: #daa52027;
+  border: 5px solid goldenrod;
+  padding: 15px;
+}
+
+.card .studentName,
+.card .studentSurname {
+  display: inline-block;
+  font-size: 1.5rem;
+}
+
+.card .studentName {
+  margin-right: 4px;
+}
+
+.categoryTitle {
+  font-weight: 700;
+}
