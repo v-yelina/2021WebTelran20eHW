@@ -98,8 +98,7 @@ addStudentBtn.addEventListener("click", (event) => {
     studentCityInput.classList.remove("error");
   }
 
-  newStudent.hobby = studentHobbyInput.value.split(", ");
-  console.log(newStudent);
+  newStudent.hobby = studentHobbyInput.value.split(/[^a-zA-Z0-9 ]/);
 
   studentNameInput.value = "";
   studentSurnameInput.value = "";
