@@ -75,8 +75,11 @@ addStudentBtn.addEventListener("click", (event) => {
   newName = studentNameInput.value.trim();
   newSurname = studentSurnameInput.value.trim();
   newCity = studentCityInput.value.trim();
-  newHobby = studentHobbyInput.value.match(/(\w)+/g);
-  // newStudent.hobby = studentHobbyInput.value.split(/[^a-zA-Z0-9 ]/);
+  let newHobby = [];
+  if (studentHobbyInput.value.trim() != "") {
+    newHobby = studentHobbyInput.value.match(/(\w)+/g);
+    // newStudent.hobby = studentHobbyInput.value.split(/[^a-zA-Z0-9 ]/);
+  }
 
   const newStudent = new Student(newId, newName, newSurname, newCity, newHobby);
 
@@ -117,7 +120,7 @@ const renderStudentsList = () => {
       }</p>
     `;
 
-    if (item.hobby.length !== 0 && item.hobby[0] !== "") {
+    if (item.hobby.length > 0) {
       student.innerHTML += `<p class="studentHobby"><span class="categoryTitle">Hobby: </span>${item.hobby.join(
         ", "
       )}</p>`;
