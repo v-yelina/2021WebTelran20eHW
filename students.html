@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="students.css" />
+    <title>Students List</title>
+  </head>
+  <body>
+    <section class="bestStudents">
+      <h1 class="sectionTitle">Our best students</h1>
+    </section>
+    <form action="#" class="addStudent">
+      <h2 class="formTitle">Add new student</h2>
+      <label for="studentName"
+        >Name
+        <input
+          type="text"
+          name="studentName"
+          id="studentName"
+          placeholder="Enter student's name"
+          required
+        />
+        <p class="requiredError requiredErrorName hidden">
+          Please, fill out this field
+        </p>
+      </label>
+      <label for="studentSurname"
+        >Surname
+        <input
+          type="text"
+          name="studentSurname"
+          id="studentSurname"
+          placeholder="Enter student's surname"
+          required
+        />
+        <p class="requiredError requiredErrorSurname hidden">
+          Please, fill out this field
+        </p>
+      </label>
+      <label for="studentCity"
+        >City
+        <input
+          type="text"
+          name="studentCity"
+          id="studentCity"
+          placeholder="Enter student's city"
+          required
+        />
+        <p class="requiredError requiredErrorCity hidden">
+          Please, fill out this field
+        </p>
+      </label>
+      <label for="studentHobby"
+        >Hobbies
+        <input
+          type="text"
+          name="studentHobby"
+          id="studentHobby"
+          placeholder="Enter student's hobbies"
+          title="Enter a text separated by commas"
+        />
+      </label>
+      <input type="submit" value="Add Student" class="addStudentBtn" />
+    </form>
+    <form action="#" class="deleteStudent">
+      <h2 class="formTitle">Delete Student</h2>
+      <select name="deleteStudentList" id="deleteStudentList"></select>
+      <input type="submit" value="Delete Student" class="deleteStudentBtn" />
+    </form>
+    <script src="students.js"></script>
+  </body>
+</html>
