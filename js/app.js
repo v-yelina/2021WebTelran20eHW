@@ -85,18 +85,18 @@ const renderTodos = () => {
   todoBlock.innerHTML =
     "<ul class='list-group'>" +
     todos
-      .map((todo) => `<li class="list-group-item">${todo.title}</li>`)
+      .map((todo) => `<li class="list-group-item ${todo.completed ? 'bg-success text-decoration-line-through' : ''}">${todo.title}</li>`)
       .join("") +
     "</ul>";
-  const todoItem = todoBlock.querySelectorAll("li");
-  for (item of todos) {
+  /* const todoItem = todoBlock.querySelectorAll("li");
+   for (item of todos) {
     if (item.completed) {
       todoItem[todos.indexOf(item)].classList.add("bg-success");
       todoItem[todos.indexOf(item)].classList.add(
         "text-decoration-line-through"
       );
     }
-  }
+  } */
 };
 
 const renderPosts = () => {
