@@ -1,0 +1,13 @@
+.clock {
+  width: max-content;
+  margin: 50% auto;
+  border: 5px solid black;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.timer {
+  display: block;
+  margin: auto;
+  width: max-content;
+}
