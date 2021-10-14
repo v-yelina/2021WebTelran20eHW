@@ -14,7 +14,7 @@ const initialState = {
 };
 
 export const reducer = (state = initialState, action) => {
-  let array, index;
+  let array;
   switch (action.type) {
     case "ADD_TODO":
       array = [...state.todos];

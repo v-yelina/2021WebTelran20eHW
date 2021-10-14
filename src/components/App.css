@@ -22,6 +22,7 @@ body {
   padding: 10px;
   border-radius: 10px;
   border: 1px solid #457b9d;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
 .addTodo button {
@@ -32,6 +33,7 @@ body {
   border: 1px solid #457b9d;
   border-radius: 10px;
   background-color: #457b9d;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
 .addTodo button:hover {
@@ -44,6 +46,7 @@ body {
   padding: 30px;
   border-radius: 30px;
   background-color: #a8dadc;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .todoItem {
