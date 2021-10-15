@@ -26,11 +26,16 @@ export const reducer = (state = initialState, action) => {
       return { ...state, todos: array };
     case "DONE_TODO":
       array = [...state.todos];
-      array.map((elem) => {
+      const index = array.findIndex((elem) => elem.id === action.payload);
+      if (index === -1) {
+        return state;
+      }
+      array[index].completed = !array[index].completed;
+      /*  array.map((elem) => {
         if (elem.id === action.payload) {
           elem.completed ? (elem.completed = false) : (elem.completed = true);
-        }
-      });
+        } 
+      });*/
       return { ...state, todos: array };
     default:
       return state;
