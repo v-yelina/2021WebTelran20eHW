@@ -1,37 +1,16 @@
 const initialState = {
-  todos: [
-    {
-      id: 1,
-      title: "Todo item 1",
-      completed: false,
-    },
-    {
-      id: 2,
-      title: "Todo item 2",
-      completed: false,
-    },
-  ],
+  offers: [],
+  chosenOffer: [],
 };
 
 export const reducer = (state = initialState, action) => {
-  let array, index;
   switch (action.type) {
-    case "ADD_TODO":
-      array = [...state.todos];
-      array.push(action.payload);
-      return { ...state, todos: array };
-    case "REMOVE_TODO":
-      array = [...state.todos];
-      array = array.filter((ele) => ele.id !== action.payload);
-      return { ...state, todos: array };
-    case "DONE_TODO":
-      array = [...state.todos];
-      array.map((elem) => {
-        if (elem.id === action.payload) {
-          elem.completed ? (elem.completed = false) : (elem.completed = true);
-        }
-      });
-      return { ...state, todos: array };
+    case "FETCH_OFFERS":
+      return { ...state.offers, offers: action.payload };
+    case "ADD_OFFER":
+      return { ...state.offers, offers: [...state.offers, action.payload] };
+    case "GET_CHOSEN_OFFER":
+      return { ...state.chosenOffer, chosenOffer: action.payload };
     default:
       return state;
   }

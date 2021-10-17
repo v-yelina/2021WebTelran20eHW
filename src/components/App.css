@@ -1,83 +1,181 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ephesis&display=swap");
 
-body {
-  background-color: #f1faee;
-  font-family: "Montserrat", sans-serif;
+/* Styles for a page with all offers */
+
+.allOffersPage {
+  height: 200vh;
 }
 
-.pageTitle {
+.allOffersPage .image {
+  height: 80vh;
+  overflow: hidden;
+}
+
+.allOffersPage .image img {
+  margin-left: -70px;
+}
+
+.offersList {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 80%;
+  grid-gap: 15px;
+  margin: -150px auto 0;
+}
+
+.offerCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: none;
+  border-radius: 10px;
+  padding: 15px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.cardImg {
+  width: 90%;
+  overflow: hidden;
+  border: none;
+  border-radius: 50%;
+  margin: 0 auto 10px;
+}
+
+.cardImg img {
+  width: 150%;
+  margin-left: -30%;
+}
+
+.cardTitle {
   text-transform: uppercase;
   text-align: center;
+  font-family: "Oswald", sans-serif;
 }
 
-.addTodo {
+.cardDescr {
   text-align: center;
-  padding-bottom: 30px;
-  border-bottom: 1px solid #457b9d;
+  font-style: italic;
+  font-weight: 300;
 }
 
-.addTodo input {
-  margin-right: 10px;
-  width: 50%;
-  padding: 10px;
-  border-radius: 10px;
-  border: 1px solid #457b9d;
-}
-
-.addTodo button {
-  padding: 10px 30px;
+.offerCard .button,
+.createPage form .button {
   text-transform: uppercase;
   font-weight: 700;
-  color: white;
-  border: 1px solid #457b9d;
-  border-radius: 10px;
-  background-color: #457b9d;
+  width: max-content;
+  margin: 0 auto;
+  background-color: white;
+  border: 1px solid rgba(128, 128, 128, 0.712);
+  padding: 10px;
+  color: black;
+  text-decoration: none;
+  text-align: center;
 }
 
-.addTodo button:hover {
+.offerCard .button:hover,
+.createPage form .button:hover {
   cursor: pointer;
+  background-color: black;
+  color: white;
+  border: 1px solid black;
 }
 
-.todoList {
-  width: 80%;
-  margin: 30px auto;
-  padding: 30px;
-  border-radius: 30px;
-  background-color: #a8dadc;
-}
+/* Styles for page with chosen offer */
 
-.todoItem {
+.offerPage {
   display: flex;
   flex-direction: row;
+  gap: 70px;
+  padding: 30px;
+  width: 90%;
+  margin: 30px auto;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.offerPage .image {
+  align-self: center;
+  overflow: hidden;
+}
+
+.offerPage .image img {
+  border: none;
+  border-radius: 20px;
+  width: 90%;
+}
+
+.offerPage .offerData {
+  width: 60%;
+}
+
+.offerPage .offerTitle {
+  font-family: "Ephesis", cursive;
+  text-align: center;
+  font-size: 5rem;
+  margin-bottom: 30px;
+}
+
+.offerPage .offerDescription {
+  font-family: "Oswald", sans-serif;
+  font-style: italic;
+  font-weight: 400;
+  text-align: center;
+}
+
+.offerPage .offerPrice {
+  font-size: 1.2rem;
+}
+
+.offerPage .offerPrice span {
+  font-weight: 700;
+}
+
+.offerPage .offerFullDescription {
+  text-indent: 30px;
+  text-align: justify;
+}
+
+/* Styles for Create offer page */
+
+.createPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  width: 100%;
-  margin-bottom: 10px;
-  border-bottom: 2px solid #457b9d;
+  height: 100vh;
+  background-image: url("https://images03.nicepage.com/c461c07a441a5d220e8feb1a/9659b0a9d4e75d5f90323f2f/dfgrey-min.jpg");
+  background-repeat: no-repeat;
 }
 
-.todoItem:hover {
-  cursor: pointer;
+.createPage form h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: rgba(128, 128, 128, 0.61);
+  text-align: center;
+  padding: 20px;
 }
 
-.isDone {
-  width: 20px;
-  height: 20px;
-  border: 2px solid black;
+.createPage form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 30px;
+  width: 70%;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  border-radius: 20px;
+}
+
+.createPage form input,
+.createPage form textarea {
+  border: none;
   border-radius: 5px;
-  margin-right: 10px;
+  padding: 10px;
 }
 
-.isDone span {
-  display: block;
-  font-weight: 900;
-  margin-left: 4px;
-}
-
-.done {
-  text-decoration: line-through;
-}
-
-.todoTitle {
-  flex-grow: 3;
-  font-weight: 300;
+.createPage form .button {
+  width: 40%;
+  border-radius: 5px;
 }
