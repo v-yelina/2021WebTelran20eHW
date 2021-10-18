@@ -1,9 +1,13 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import { useParams } from "react-router";
 
 const OfferPage = () => {
-  const chosenOffer = useSelector((state) => state.chosenOffer[0]);
-  return (
+  const { offerId } = useParams();
+  const chosenOffer = useSelector((state) =>
+    state.offers.find((offer) => offer.id === +offerId)
+  );
+  return chosenOffer !== undefined ? (
     <div className="offerPage">
       <div className="image">
         <img src={chosenOffer.imgUrl} alt="Page Background" />
@@ -18,6 +22,8 @@ const OfferPage = () => {
         <p className="offerFullDescription">{chosenOffer.fulldescription}</p>
       </div>
     </div>
+  ) : (
+    <h4>Offer not found</h4>
   );
 };
 

@@ -98,13 +98,13 @@ const GlobalContextProvider = (props) => {
           <p>{offer.description}</p>
         </div>
         <NavLink
-          to="/offer"
+          to={"/offer/" + offer.id}
           className="button"
-          onClick={() => {
-            {
-              onGetChosenOffer(offer.id);
-            }
-          }}
+          // onClick={() => {
+          //   {
+          //     onGetChosenOffer(offer.id);
+          //   }
+          // }}
         >
           Learn More
         </NavLink>

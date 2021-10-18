@@ -20,7 +20,7 @@ function App() {
           <Route path="/create" component={CreateOffer}>
             {/* <CreateOffer /> */}
           </Route>
-          <Route path="/offer" component={OfferPage}>
+          <Route path="/offer/:offerId" component={OfferPage}>
             {/* <OfferPage /> */}
           </Route>
         </Switch>
