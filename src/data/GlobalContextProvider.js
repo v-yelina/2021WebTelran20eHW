@@ -9,6 +9,9 @@ const initialValue = {
   description: "",
   imgUrl: "",
   fulldescription: "",
+  mealService: "",
+  assistance: "",
+  routeInfo: "",
 };
 
 const GlobalContextProvider = (props) => {
@@ -27,6 +30,9 @@ const GlobalContextProvider = (props) => {
         "https://images03.nicepage.com/c461c07a441a5d220e8feb1a/d02c30f780175e849eefdae0/deck-professional-sailboat-racing-yacht-during-competition-sunny-windy-summer-day-moving-fast-through-waves-water-with-spinnaker-up_346278-333.jpg",
       fulldescription:
         "Glavi amet ritnisl libero molestie ante ut fringilla purus eros quis glavrid from dolor amet iquam lorem bibendum,Glavi amet ritnisl libero molestie ante ut fringilla purus eros quis glavrid from dolor amet iquam lorem bibendumGlavi amet ritnisl libero molestie ante ut fringilla purus eros quis glavrid from dolor amet iquam lorem bibendum Glavi amet ritnisl libero molestie ante ut fringilla purus eros quis glavrid from dolor amet iquam lorem bibendumGlavi amet ritnisl libero molestie ante ut fringilla purus eros quis glavrid from dolor amet iquam lorem bibendum",
+      mealService: true,
+      assistance: true,
+      routeInfo: true,
     },
     {
       id: 2,
@@ -38,6 +44,9 @@ const GlobalContextProvider = (props) => {
         "https://images03.nicepage.com/c461c07a441a5d220e8feb1a/2759d98353df5f029965d605/happy-beautiful-adult-couple-sitting-side-yacht-watching-seaside-hugging-while-vacation-tan-might-fade-such-memories-you-share-with-one-you-love-l.jpg",
       fulldescription:
         "Glavi amet ritnisl libero molestie ante ut fringilla purus eros quis glavrid from dolor amet iquam lorem bibendum,Glavi amet ritnisl libero molestie ante ut fringilla purus eros quis glavrid from dolor amet iquam lorem bibendumGlavi amet ritnisl libero molestie ante ut fringilla purus eros quis glavrid from dolor amet iquam lorem bibendum Glavi amet ritnisl libero molestie ante ut fringilla purus eros quis glavrid from dolor amet iquam lorem bibendumGlavi amet ritnisl libero molestie ante ut fringilla purus eros quis glavrid from dolor amet iquam lorem bibendum",
+      mealService: false,
+      assistance: true,
+      routeInfo: true,
     },
     {
       id: 3,
@@ -49,6 +58,9 @@ const GlobalContextProvider = (props) => {
         "https://images03.nicepage.com/c461c07a441a5d220e8feb1a/88930d33cd7e5e66b911c0f6/woman-standing-nose-yacht-sunny-summer-day-breeze-developing-hair_231208-8349.jpg",
       fulldescription:
         "Glavi amet ritnisl libero molestie ante ut fringilla purus eros quis glavrid from dolor amet iquam lorem bibendum,Glavi amet ritnisl libero molestie ante ut fringilla purus eros quis glavrid from dolor amet iquam lorem bibendumGlavi amet ritnisl libero molestie ante ut fringilla purus eros quis glavrid from dolor amet iquam lorem bibendum Glavi amet ritnisl libero molestie ante ut fringilla purus eros quis glavrid from dolor amet iquam lorem bibendumGlavi amet ritnisl libero molestie ante ut fringilla purus eros quis glavrid from dolor amet iquam lorem bibendum",
+      mealService: false,
+      assistance: false,
+      routeInfo: true,
     },
   ];
 
@@ -67,15 +79,24 @@ const GlobalContextProvider = (props) => {
     dispatch({
       type: "ADD_OFFER",
       payload: {
-        id: inputs.title,
+        id: Date.now(),
         title: inputs.title,
         price: inputs.price,
         description: inputs.description,
         imgUrl: inputs.imgUrl,
         fulldescription: inputs.fulldescription,
+        mealService: inputs.mealService,
+        assistance: inputs.assistance,
+        routeInfo: inputs.routeInfo,
       },
     });
     setInputs(initialValue);
+  };
+
+  const onCheckboxChangeHandler = (event) => {
+    setInputs((inputs) => {
+      return { ...inputs, [event.target.name]: !inputs[event.target.name] };
+    });
   };
 
   const renderOffers = () => {
@@ -105,6 +126,7 @@ const GlobalContextProvider = (props) => {
         onAddOffer,
         onHandleChange,
         renderOffers,
+        onCheckboxChangeHandler,
       }}
     >
       {props.children}

@@ -132,6 +132,36 @@
   font-weight: 700;
 }
 
+.offerPage .services {
+  display: flex;
+  position: relative;
+  gap: 40px;
+  list-style: none;
+}
+
+.offerPage .services li {
+  position: relative;
+}
+
+.offerPage .services li::before {
+  display: block;
+  width: 14px;
+  height: 14px;
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: -20px;
+  color: #808080;
+}
+
+.offerPage .services .checked::before {
+  background-image: url(../img/checked.svg);
+}
+
+.offerPage .services .unchecked::before {
+  background-image: url(../img/unchecked.svg);
+}
+
 .offerPage .offerFullDescription {
   text-indent: 30px;
   text-align: justify;
@@ -152,7 +182,7 @@
 .createPage form h2 {
   font-size: 3rem;
   font-weight: 700;
-  color: rgba(128, 128, 128, 0.61);
+  color: rgba(128, 128, 128, 0.726);
   text-align: center;
   padding: 20px;
 }
@@ -173,6 +203,10 @@
   border: none;
   border-radius: 5px;
   padding: 10px;
+}
+
+.createPage .checkbox label {
+  margin: 0 10px;
 }
 
 .createPage form .button {

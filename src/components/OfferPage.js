@@ -19,6 +19,17 @@ const OfferPage = () => {
           <span>Price: &nbsp;</span>
           {chosenOffer.price}
         </p>
+        <ul className="services">
+          <li className={chosenOffer.mealService ? "checked" : "unchecked"}>
+            Meal Service
+          </li>
+          <li className={chosenOffer.assistance ? "checked" : "unchecked"}>
+            Assistance
+          </li>
+          <li className={chosenOffer.routeInfo ? "checked" : "unchecked"}>
+            Route Info
+          </li>
+        </ul>
         <p className="offerFullDescription">{chosenOffer.fulldescription}</p>
       </div>
     </div>

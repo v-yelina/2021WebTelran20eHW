@@ -2,7 +2,8 @@ import React, { useContext } from "react";
 import { GlobalContext } from "../data/GlobalContextProvider";
 
 const CreateOffer = () => {
-  const { inputs, onHandleChange, onAddOffer } = useContext(GlobalContext);
+  const { inputs, onHandleChange, onCheckboxChangeHandler, onAddOffer } =
+    useContext(GlobalContext);
 
   return (
     <div className="createPage">
@@ -42,6 +43,36 @@ const CreateOffer = () => {
           onChange={onHandleChange}
           placeholder="URL of offer image"
         />
+        <div className="checkbox">
+          <label htmlFor="mealService">Meal Service</label>
+          <input
+            type="checkbox"
+            name="mealService"
+            id="mealService"
+            value={inputs.mealService}
+            onChange={onCheckboxChangeHandler}
+          />
+        </div>
+        <div className="checkbox">
+          <label htmlFor="assistance">Assistance</label>
+          <input
+            type="checkbox"
+            name="assistance"
+            id="assistance"
+            value={inputs.assistance}
+            onChange={onCheckboxChangeHandler}
+          />
+        </div>
+        <div className="checkbox">
+          <label htmlFor="routeInfo">Route Info</label>
+          <input
+            type="checkbox"
+            name="routeInfo"
+            id="routeInfo"
+            value={inputs.routeInfo}
+            onChange={onCheckboxChangeHandler}
+          />
+        </div>
         <input type="submit" className="button" value="Create" />
       </form>
     </div>
