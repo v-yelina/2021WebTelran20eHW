@@ -14,15 +14,9 @@ function App() {
       <Navbar />
       <div className="container">
         <Switch>
-          <Route path="/" exact={true} component={AllOffers}>
-            {/* <AllOffers /> */}
-          </Route>
-          <Route path="/create" component={CreateOffer}>
-            {/* <CreateOffer /> */}
-          </Route>
-          <Route path="/offer/:offerId" component={OfferPage}>
-            {/* <OfferPage /> */}
-          </Route>
+          <Route path="/" exact={true} component={AllOffers}></Route>
+          <Route path="/create" component={CreateOffer}></Route>
+          <Route path="/offer/:offerId" component={OfferPage}></Route>
         </Switch>
       </div>
     </GlobalContextProvider>

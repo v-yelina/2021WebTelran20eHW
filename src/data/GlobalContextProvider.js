@@ -78,13 +78,6 @@ const GlobalContextProvider = (props) => {
     setInputs(initialValue);
   };
 
-  const onGetChosenOffer = (offerID) => {
-    dispatch({
-      type: "GET_CHOSEN_OFFER",
-      payload: [...offers].filter((offer) => offer.id === offerID),
-    });
-  };
-
   const renderOffers = () => {
     return offers.map((offer) => (
       <div className="offerCard" key={offer.id}>
@@ -97,15 +90,7 @@ const GlobalContextProvider = (props) => {
         <div className="cardDescr">
           <p>{offer.description}</p>
         </div>
-        <NavLink
-          to={"/offer/" + offer.id}
-          className="button"
-          // onClick={() => {
-          //   {
-          //     onGetChosenOffer(offer.id);
-          //   }
-          // }}
-        >
+        <NavLink to={"/offer/" + offer.id} className="button">
           Learn More
         </NavLink>
       </div>
@@ -120,7 +105,6 @@ const GlobalContextProvider = (props) => {
         onAddOffer,
         onHandleChange,
         renderOffers,
-        onGetChosenOffer,
       }}
     >
       {props.children}
