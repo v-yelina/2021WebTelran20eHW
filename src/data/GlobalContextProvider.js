@@ -1,21 +1,23 @@
 import React, { createContext, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { NavLink } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 
 export const GlobalContext = createContext();
+
 const initialValue = {
   title: "",
   price: "",
   description: "",
   imgUrl: "",
   fulldescription: "",
-  mealService: "",
-  assistance: "",
-  routeInfo: "",
+  mealService: false,
+  assistance: false,
+  routeInfo: false,
 };
 
 const GlobalContextProvider = (props) => {
   const dispatch = useDispatch();
+  const history = useHistory();
   const offers = useSelector((state) => state.offers);
   const [inputs, setInputs] = useState(initialValue);
 
@@ -91,6 +93,7 @@ const GlobalContextProvider = (props) => {
       },
     });
     setInputs(initialValue);
+    history.push("/");
   };
 
   const onCheckboxChangeHandler = (event) => {
