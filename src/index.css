@@ -1,13 +1,287 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #284885;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.block {
+  margin: 55px auto;
+  color: white;
+  background-color: #181948;
+  box-shadow: 10px 0px 20px 20px #181948;
+}
+
+/* Navbar styles */
+
+.navbar {
+  display: flex;
+  gap: 37px;
+  margin-left: 50px;
+}
+
+.navbar .navLink {
+  position: relative;
+  color: white;
+  text-decoration: none;
+  background-color: #181948;
+  border: 1px solid white;
+  border-left: none;
+  border-right: none;
+  padding: 10px;
+}
+
+.navbar .navLink::before {
+  content: "";
+  position: absolute;
+  right: -20px;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-left: 20px solid #181948;
+  border-top: 22px solid transparent;
+  border-bottom: 20px solid transparent;
+}
+
+.navbar .navLink::after {
+  content: "";
+  position: absolute;
+  left: -20px;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-right: 20px solid #181948;
+  border-top: 22px solid transparent;
+  border-bottom: 20px solid transparent;
+}
+
+.navbar .navLink:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+/* Page styles */
+
+.page {
+  width: 80%;
+  margin: 50px auto;
+  text-align: center;
+  min-height: 300vh;
+}
+
+.pageTitle {
+  padding: 0 20px;
+  width: 60%;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+}
+
+/* Classes for Home Page */
+
+.homePage {
+  background-image: url("/src/img/who-wants-to-be-a-millionaire-logo-svg-vector.svg");
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 550px;
+}
+
+/* Styles for Quizzes List */
+
+.quizzesList {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.quizCard {
+  display: flex;
+  justify-content: center;
+  padding: 30px 10px;
+  background-color: #5d1a57;
+  border-radius: 10px;
+  border: 5px solid #181948;
+}
+
+.quizCard:hover {
+  cursor: pointer;
+  transform: scale(1.5);
+  border: 3px solid #f5dc7c;
+}
+
+.quizCard .quizTitle {
+  align-self: center;
+  color: white;
+  font-size: 1.3rem;
+  text-decoration: none;
+}
+
+/* Classes for quiz page */
+
+.question {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.questionTitle {
+  position: relative;
+  font-size: 1.2rem;
+  color: white;
+  text-decoration: none;
+  background-color: #181948;
+  border: 1px solid #f5dc7c;
+  border-left: none;
+  border-right: none;
+  padding: 10px;
+  min-height: 65px;
+}
+
+.questionTitle::before {
+  content: "";
+  position: absolute;
+  right: -20px;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-left: 20px solid #181948;
+  border-top: 32px solid transparent;
+  border-bottom: 32px solid transparent;
+}
+
+.questionTitle::after {
+  content: "";
+  position: absolute;
+  left: -20px;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-right: 20px solid #181948;
+  border-top: 32px solid transparent;
+  border-bottom: 32px solid transparent;
+}
+
+.answersList {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: space-between;
+}
+
+.answer {
+  color: white;
+  text-decoration: none;
+  background-color: #181948;
+  border: 1px solid #f5dc7c;
+  border-left: none;
+  border-right: none;
+  padding: 10px;
+  margin: 10px;
+}
+
+.answer:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+  border: 3px solid #f5dc7c;
+  margin: 7px 15px;
+}
+
+/* Styles for Admin Panel */
+
+.addForm {
+  width: 80%;
+  padding: 10px;
+}
+
+.addForm input,
+.addForm select {
+  width: 90%;
+  margin: 0 auto 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+}
+
+.addForm h3 {
+  padding: 0;
+  margin-bottom: 20px;
+  color: white;
+}
+
+/* Styles for leaderboard page */
+
+.yourScore {
+  padding: 10px;
+  font-size: 2rem;
+}
+
+.yourScore span {
+  font-weight: 700;
+  font-size: larger;
+}
+
+.yourScore .questionsNumber {
+  color: #a114dc;
+}
+
+.yourScore.goodScore .scoreSpan {
+  color: #f5dc7c;
+}
+
+.yourScore.badScore .scoreSpan {
+  color: red;
+}
+
+.leaderboard .navItem {
+  display: block;
+  width: 30%;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.leaderboardTitle {
+  margin-bottom: 50px;
+  width: 50%;
+}
+
+.scoreTable {
+  margin-top: 50px;
+  padding: 20px 50px;
+  width: 50%;
+}
+
+.scoreTable table {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.scoreTable th,
+.scoreTable td {
+  padding: 10px;
+}
+
+table {
+  border-collapse: collapse;
+  /* border: 2px solid #f5dc7c; */
+}
+
+th {
+  border-bottom: 2px solid #f5dc7c;
+}
+
+td {
+  border-collapse: collapse;
+  border-bottom: 1px solid white;
 }
