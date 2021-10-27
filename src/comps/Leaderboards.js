@@ -9,7 +9,7 @@ const Leaderboards = () => {
   );
 
   const renderScore = () => {
-    return !Object.keys(score).length ? (
+    return !score || !Object.keys(score).length ? (
       <div className="yourScore block"> No scores </div>
     ) : (
       <div
@@ -55,9 +55,13 @@ const Leaderboards = () => {
 
   return (
     <div className="page leaderboard">
-      <h1 className="pageTitle block">
-        {score.score / score.questions > 0.5 ? "Congratulations!" : "Oops..."}
-      </h1>
+      {!score || !Object.keys(score).length ? (
+        <div className="pageTitle block"> Leaderboard </div>
+      ) : (
+        <h1 className="pageTitle block">
+          {score.score / score.questions > 0.5 ? "Congratulations!" : "Oops..."}
+        </h1>
+      )}
       {renderScore()}
 
       <h3 className="leaderboardTitle block">Leaderboard</h3>

@@ -198,14 +198,64 @@ code {
 
 /* Styles for Admin Panel */
 
-.addForm {
-  width: 80%;
+.adminPage {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 180px max-content 150px;
+  gap: 20px;
+}
+
+.adminPage .block {
+  width: 100%;
+  box-shadow: 5px 5px 5px 5px #181948;
+  padding: 15px 0px;
+  margin: 0px auto;
+  min-height: 200px;
+}
+
+.adminPage .pageTitle {
+  box-shadow: 10px 0px 20px 20px #181948;
+  padding: 0;
+  margin: 55px auto;
+  min-height: 0px;
+}
+
+.adminPage .pageTitle {
+  grid-column: 1/4;
+}
+
+.adminPage .list {
+  display: flex;
+  flex-direction: column;
+}
+
+.adminPage .list li {
+  list-style: none;
   padding: 10px;
+}
+
+.adminPage .list li:hover {
+  cursor: pointer;
+  border: 2px solid #f5dc7c;
+  border-radius: 10px;
+  color: #f5dc7c;
+}
+
+.adminPage input[type="submit"]:hover {
+  color: white;
+  background-color: black;
+  cursor: pointer;
+}
+
+.adminPage .addForm {
+  padding: 20px;
+  padding-left: 25px;
+  min-height: 150px;
 }
 
 .addForm input,
 .addForm select {
-  width: 90%;
+  width: 100%;
   margin: 0 auto 10px;
   padding: 10px;
   border: none;
@@ -216,6 +266,18 @@ code {
   padding: 0;
   margin-bottom: 20px;
   color: white;
+}
+
+.checkbox {
+  display: flex;
+  justify-content: flex-start;
+  align-items: baseline;
+  margin-bottom: 10px;
+}
+
+.adminPage .checkbox input {
+  width: auto;
+  margin: 0 10px;
 }
 
 /* Styles for leaderboard page */
@@ -274,7 +336,6 @@ code {
 
 table {
   border-collapse: collapse;
-  /* border: 2px solid #f5dc7c; */
 }
 
 th {

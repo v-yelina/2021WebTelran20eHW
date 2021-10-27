@@ -1,10 +1,11 @@
+import { SEND_SCORE, ADD_QUIZ, ADD_QUESTION, ADD_ANSWER } from "./constTypes";
+
 const initState = {
   scoreTable: [],
   quizzes: [
     {
       id: 1,
       title: "Geography",
-      // tags: ["", ""]
       questions: [
         {
           id: 1,
@@ -14,7 +15,6 @@ const initState = {
               id: 1,
               title: "Indiana",
               correct: true,
-              // points: 10,
             },
             {
               id: 2,
@@ -369,10 +369,43 @@ const initState = {
   ],
 };
 
-export const reducer = (state = initState, action) => {
-  switch (action.type) {
-    case "SEND_SCORE":
-      return { ...state, scoreTable: [...state.scoreTable, action.payload] };
+export const reducer = (state = initState, { type, payload, quizId }) => {
+  switch (type) {
+    case SEND_SCORE:
+      return { ...state, scoreTable: [...state.scoreTable, payload] };
+    case ADD_QUIZ:
+      return { ...state, quizzes: [...state.quizzes, payload] };
+    case ADD_QUESTION:
+      return {
+        ...state,
+        quizzes: state.quizzes.map((quiz) => {
+          if (quiz.id === quizId) {
+            return { ...quiz, questions: [...quiz.questions, payload] };
+          }
+          return quiz;
+        }),
+      };
+    case ADD_ANSWER:
+      return {
+        ...state,
+        quizzes: state.quizzes.map((quiz) => {
+          if (quiz.id === payload.quizId) {
+            return {
+              ...quiz,
+              questions: quiz.questions.map((question) => {
+                if (question.id === payload.questionId) {
+                  return {
+                    ...question,
+                    answers: [...question.answers, payload.answer],
+                  };
+                }
+                return question;
+              }),
+            };
+          }
+          return quiz;
+        }),
+      };
 
     default:
       return state;

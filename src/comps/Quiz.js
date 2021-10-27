@@ -1,25 +1,31 @@
 import React, { useEffect, useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
+import { addScore } from "../store/actionGenerator";
 
 const Quiz = () => {
   const history = useHistory();
+  const dispatch = useDispatch();
   const { quizID } = useParams();
   const currentQuiz = useSelector((state) =>
     state.quizzes.find((quiz) => quiz.id === +quizID)
   );
-  const dispatch = useDispatch();
-
   const [activeQIndex, setActiveQIndex] = useState(0);
   const [activeQuestion, setActiveQuestion] = useState({});
+  const [score, setScore] = useState(0);
+  const [isAnswered, setIsAnswered] = useState(false);
 
   useEffect(() => {
     if (currentQuiz !== undefined) {
       setActiveQuestion(currentQuiz.questions[activeQIndex]);
     }
   }, [activeQIndex]);
-  const [score, setScore] = useState(0);
-  const [isAnswered, setIsAnswered] = useState(false);
+
+  useEffect(() => {
+    if (currentQuiz !== undefined) {
+      setActiveQuestion(currentQuiz.questions[activeQIndex]);
+    }
+  }, [activeQIndex]);
 
   const renderQuestion = () => {
     return !activeQuestion.id ? (
@@ -31,12 +37,6 @@ const Quiz = () => {
       </div>
     );
   };
-
-  useEffect(() => {
-    if (currentQuiz !== undefined) {
-      setActiveQuestion(currentQuiz.questions[activeQIndex]);
-    }
-  }, [activeQIndex]);
 
   const renderAnswers = () => {
     return activeQuestion.answers.map((answer) => (
@@ -56,15 +56,9 @@ const Quiz = () => {
     if (!isAnswered) {
       return;
     }
-    if (activeQIndex + 1 === currentQuiz.questions.length) {
-      dispatch({
-        type: "SEND_SCORE",
-        payload: {
-          time: Date.now(),
-          score,
-          questions: currentQuiz.questions.length,
-        },
-      });
+    const questions = currentQuiz.questions.length;
+    if (activeQIndex + 1 === questions) {
+      dispatch(addScore(score, questions));
       history.push("/leaderboards");
     } else {
       setActiveQIndex((activeQIndex) => activeQIndex + 1);
@@ -78,7 +72,6 @@ const Quiz = () => {
     );
     if (answer.correct) {
       setScore((score) => score + 1);
-      console.log(`current score: ${score}`);
     }
     setIsAnswered(true);
   };
