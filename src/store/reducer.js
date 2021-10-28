@@ -1,38 +1,21 @@
-const initialState = {
-  todos: [
-    {
-      id: 1,
-      title: "Todo item 1",
-      completed: false,
-    },
-    {
-      id: 2,
-      title: "Todo item 2",
-      completed: false,
-    },
-  ],
-};
+import {FETCH_CATEGORY, FETCH_ERROR, FETCH_PRODUCTS} from "./constTypes";
 
-export const reducer = (state = initialState, action) => {
-  let array, index;
-  switch (action.type) {
-    case "ADD_TODO":
-      array = [...state.todos];
-      array.push(action.payload);
-      return { ...state, todos: array };
-    case "REMOVE_TODO":
-      array = [...state.todos];
-      array = array.filter((ele) => ele.id !== action.payload);
-      return { ...state, todos: array };
-    case "DONE_TODO":
-      array = [...state.todos];
-      array.map((elem) => {
-        if (elem.id === action.payload) {
-          elem.completed ? (elem.completed = false) : (elem.completed = true);
-        }
-      });
-      return { ...state, todos: array };
-    default:
-      return state;
-  }
-};
+const initState = {
+    categories: [],
+    products: [],
+    error: null
+}
+
+export const reducer = (state = initState, {type, payload}) => {
+    switch (type) {
+        case FETCH_CATEGORY:
+            return {...state, categories: payload}
+        case FETCH_PRODUCTS:
+            return {...state, products: payload}
+        case FETCH_ERROR:
+            return {...state, error: payload}
+        default:
+            return state
+    }
+}
+

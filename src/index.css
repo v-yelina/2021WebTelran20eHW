@@ -1,13 +1,191 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+/* Styles for Navbar */
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin: 20px;
+}
+
+.navlink {
+  text-decoration: none;
+  color: #bd9084;
+  border: 3px solid #bd9084;
+  padding: 10px;
+}
+
+.navlink:hover {
+  cursor: pointer;
+  background-color: #bd9084;
+  color: white;
+}
+
+/* Styles for Categories list */
+
+.categoriesList {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 15px;
+  list-style: none;
+  width: 80%;
+  margin: 50px auto;
+}
+
+.category {
+  background-color: #bd9084;
+  color: white;
+  border: 3px solid #bd9084;
+  padding: 10px;
+  text-transform: capitalize;
+}
+
+.category:hover {
+  cursor: pointer;
+  color: #bd9084;
+  border: 3px solid rgb(189, 144, 132);
+  background-color: white;
+}
+
+/* Styles for Product's List */
+
+.productsList {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  width: 90%;
+  margin: 50px auto;
+}
+
+/* Styles for Product Card */
+
+/* <article className="productCard">
+      <figure className="productImg">
+        <img />
+      </figure>
+      <Link className="moreBtn">
+      <span className="productPrice">
+      <h3 className="productTitle"> 
+*/
+
+.productCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: rgba(189, 144, 132, 0.15) 1.95px 1.95px 2.6px;
+  padding: 10px;
+}
+
+.productCard:hover {
+  transform: scale(1.1);
+}
+
+.productImg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  padding: 45px;
+}
+
+.productImg img {
+  width: 150px;
+}
+
+.moreBtn {
+  padding: 10px 20px;
+  background-color: #d3b9b3;
+  text-decoration: none;
+  color: rgb(90, 54, 8);
+  margin-top: -30px;
+}
+
+.moreBtn:hover {
+  cursor: pointer;
+  background-color: #b99a93;
+}
+
+.productPrice {
+  margin-top: 30px;
+  font-weight: 700;
+  font-size: 1.6rem;
+}
+
+.productTitle {
+  font-weight: 400;
+  text-align: center;
+  font-style: italic;
+  font-size: 1rem;
+}
+
+/* Product Page styles */
+
+/* <main className="productPage">
+      <figure className="productPageImg">
+        <img />
+      </figure>
+      <div className="productInfo">
+        <h1 className="productPageTitle">
+        <h4 className="productPageCategory">
+        <span className="productPagePrice">
+        <p className="productPageDescription">
+*/
+
+.productPage {
+  display: flex;
+  flex-direction: row;
+  width: 95%;
+  margin: 50px auto;
+  color: rgb(90, 54, 8);
+}
+
+.line {
+  border-bottom: 5px solid #bd9084;
+  width: 20%;
+}
+
+.productPageImg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 45%;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  padding: 30px;
+}
+
+.productPageImg img {
+  width: auto;
+  max-height: 350px;
+}
+
+.productInfo {
+  padding: 10px;
+  margin: auto 0;
+}
+
+.productPageCategory {
+  font-weight: 400;
+}
+
+.productPagePrice {
+  font-weight: 700;
+  font-size: 1.5rem;
 }
