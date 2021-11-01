@@ -189,3 +189,101 @@ code {
   font-weight: 700;
   font-size: 1.5rem;
 }
+
+/* Styles for Admin Page */
+
+.adminPage {
+  margin: 20px;
+}
+
+.adminPage h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: rgb(90, 54, 8);
+}
+
+.adminPage ul {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.adminPage li {
+  font-size: 1.3rem;
+  text-align: center;
+  list-style: none;
+  padding: 10px;
+  border-bottom: 2px solid rgb(90, 54, 8);
+}
+
+/* Styles for Order Information Block */
+
+/* <article className="orderInfo">
+      <h3>Order from </h3>
+      <div className="userInfo">
+        <p className="userName">
+          <span>User Name:</span>
+        <p className="userAdress">
+          <span>Adress:</span>
+        <p className="userEmail">
+          <span>Email:</span>
+        <p className="userPhone">
+          <span>Phone:</span>
+      </div>
+      <table className="orderProducts">
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Price</th>
+        <tbody>
+          <tr>
+            <td>Some Product</td>
+            <td>3</td>
+            <td>$180</td>
+        <tfoot>
+          <tr>
+            <td className="totalAmount">Total amount:</td>
+            <td>$180</td> */
+
+.orderInfo {
+  padding: 15px 25px;
+  border: 2px solid rgb(189, 144, 132);
+  width: 60%;
+  margin: 10px auto;
+}
+
+.orderInfo h3 {
+  margin: 10px;
+  text-align: center;
+}
+
+.userInfo span {
+  font-weight: 700;
+}
+
+.orderProducts {
+  width: 80%;
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+
+.orderProducts th {
+  padding: 10px;
+  text-align: center;
+  border-bottom: 1px solid #d3b9b3;
+}
+
+.orderProducts td {
+  padding: 5px;
+  text-align: right;
+}
+
+.orderProducts tfoot td {
+  border-top: 1px solid #d3b9b3;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.orderProducts td:first-child {
+  text-align: left;
+}

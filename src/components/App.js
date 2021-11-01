@@ -5,7 +5,12 @@ import Admin from "./Admin";
 import Product from "./ProductPage";
 import ProductList from "./ProductsList";
 import { useDispatch } from "react-redux";
-import { getAllCategories, getAllProducts } from "../store/actionGenerator";
+import {
+  getAllCarts,
+  getAllCategories,
+  getAllProducts,
+  getAllUsers,
+} from "../store/actionGenerator";
 import "../index.css";
 
 const App = () => {
@@ -13,6 +18,8 @@ const App = () => {
   useEffect(() => {
     dispatch(getAllProducts());
     dispatch(getAllCategories());
+    dispatch(getAllCarts());
+    dispatch(getAllUsers());
   }, []);
 
   return (
